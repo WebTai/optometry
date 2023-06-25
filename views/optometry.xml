@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- actions opening views on models -->
+  <record model="ir.actions.act_window" id="optometry_action_window">
+    <field name="name">驗光單</field>
+    <field name="res_model">optometry.order</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <!-- Top menu item -->
+  <menuitem name="驗光作業" id="menu_optometry_optometry_root"  />
+  <menuitem name="驗光單" id="menu_optometry_order" parent="menu_optometry_optometry_root" action="optometry_action_window"/>
+  <record model="ir.ui.view" id="optometry_list">
+    <field name="name">optometry list</field>
+    <field name="model">optometry.order</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="customer_id"/>
+        <field name="optometrist_id"/>
+        <field name="order_created"/>
+        <field name="order_pd" />
+        <field name="order_notes"/>
+      </tree>
+    </field>
+  </record>
+  <record id="optometry_form" model="ir.ui.view">
+    <field name="name">optometry form</field>
+    <field name="model">optometry.order</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+       
+        </header>
+        <sheet>
+          <field name="image_id" class="oe_avatar"/>
+          <div class="oe_title">
+            <h1>
+              <field name="customer_id" readonly="1"/>
+            </h1>
+          </div>
+          <group>
+            <group>
+              <field name="customer_id" />
+              <field name="optometrist_id" />
+            </group>
+            <group>
+              <field name="order_created" />
+            </group>
+          </group>
+          <group>
+            <group>
+              <p class="border-bottom">
+                <h3>左眼</h3>
+              </p>
+              <p class="border-bottom">
+                <h3>數據</h3>
+              </p>
+              <field name="order_l_sph" />
+              <field name="order_l_cyl" />
+              <field name="order_l_axis" />
+              <field name="order_l_prsim" />
+              <field name="order_l_bas" />
+            </group>
+            <group>
+              <p class="border-bottom">
+                <h3>右眼</h3>
+              </p>
+              <p class="border-bottom">
+                <h3>數據</h3>
+              </p>
+              <field name="order_r_sph" />
+              <field name="order_r_cyl" />
+              <field name="order_r_axis" />
+              <field name="order_r_prsim" />
+              <field name="order_r_bas" />
+            </group>
+          </group>
+          <group>
+            <field name="order_pd" />
+          </group>
+          <group>
+            <field name="order_notes" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="view_optometry_order_search" model="ir.ui.view">
+    <field name="name">optometry.order.search</field>
+    <field name="model">optometry.order</field>
+    <field name="arch" type="xml">
+      <search string="客戶名稱">
+        <field name="customer_id"/>
+        <!-- <field name="customer_id.mobile"/> -->
+      </search>
+    </field>
+  </record>
+</odoo>

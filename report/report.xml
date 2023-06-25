@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="report_optometry_order" model="ir.actions.report">
+        <field name="name">驗光單</field>
+        <field name="model">optometry.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">optometry.report_optometry_id_order5</field>
+        <field name="report_file">optometry.report_optometry_id_order6</field>
+        <field name="binding_model_id" ref="model_optometry_order"/>
+        <field name="print_report_name">'驗光單'</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

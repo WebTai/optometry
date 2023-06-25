@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_optometry_order,optometry.order,model_optometry_order,group_optometrist,1,1,1,1
+access_optometry_optometrist,optometry.optometrist,model_optometry_optometrist,group_optometrist,1,1,1,1
+access_optometry_shop,optometry.store,model_optometry_store,group_optometrist,1,1,1,1
+access_optometry_order,optometry.order,model_optometry_order,,1,0,0,0
+access_optometry_optometrist,optometry.optometrist,model_optometry_optometrist,,1,0,0,0
+access_optometry_shop,optometry.store,model_optometry_store,,1,0,0,0

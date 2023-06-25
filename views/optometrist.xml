@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record model="ir.actions.act_window" id="optometrist_action_window">
+    <field name="name">驗光師資料維護</field>
+    <field name="res_model">optometry.optometrist</field>
+    <field name="binding_view_types">list,form</field>
+  </record>
+  <!-- Top menu item -->
+  <menuitem name="驗光師" id="menu_optometry_optometrist_root" parent="menu_optometry_optometry_root" action="optometrist_action_window"/>
+  <record model="ir.ui.view" id="optometrist_list">
+    <field name="name">optometrist list</field>
+    <field name="model">optometry.optometrist</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="optometrist_id"/>
+        <field name="email"/>
+        <field name="mobile"/>
+        <field name="lience_id"/>
+      </tree>
+    </field>
+  </record>
+  <record id="optometrist_form" model="ir.ui.view">
+    <field name="name">optometrist form</field>
+    <field name="model">optometry.optometrist</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          
+        </header>
+        <sheet>
+          <field name="image_id" widget='image' class="oe_avatar"/>
+          <div class="oe_button_box">
+            <BUTTONS/>
+          </div>
+          <div class="oe_title">
+            <h1>
+              <field name="optometrist_id" readonly="1"/>
+            </h1>
+          </div>
+          <group >
+            <group >
+              <field name="optometrist_id" />
+              <field name="email" />
+            </group>
+            <group >
+              <field name="mobile" />
+              <field name="lience_id" />
+            </group>
+            <group >
+              <field name="lic" widget='image'/>
+            </group>
+            <group>
+              <field name="pic" widget='image'/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="view_optometry_optometrist_search" model="ir.ui.view">
+    <field name="name">optometry.optometrist.search</field>
+    <field name="model">optometry.optometrist</field>
+    <field name="arch" type="xml">
+      <search string="驗光師">
+        <field name="optometrist_id"/>
+        <field name="mobile"/>
+      </search>
+    </field>
+  </record>
+</odoo>

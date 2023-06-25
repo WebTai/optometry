@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="report_optometry_id_order5">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h2 class="text-center mt-0">驗光單</h2>
+                        <div class="row">
+                            <div class="col-auto col-4">
+                                <p class="mt-0 mb-1">客戶姓名:</p>
+                                <p class="text-left mt-0 mb-1" t-field="o.customer_id.name"/>
+                            </div>
+                            <div class="col-auto col-4"></div>
+                            <div class="col-auto col-4">
+                                <p class="mt-0 mb-1">開單日期:</p>
+                                <p class="text-left mt-0 mb-1" t-field="o.order_created"/>
+                            </div>
+                        </div>
+                        <!-- <div class="col-12">
+                            <p>客戶姓名:</p>
+                            <p class="text-left" t-field="o.customer_id.name"/>
+                            <p>開單日期:</p>
+                            <p class="text-right" t-field="o.order_created"/>
+                        </div> -->
+                        <br></br>
+                        <table class="table table-bordered"  style="border-color:red;">
+                            <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                            <thead >
+                                <tr>
+                                    <th name="l_sph" class="text-center">L-SPH</th>
+                                    <th name="l_cyl" class="text-center">L-CYL</th>
+                                    <th name="l_axis" class="text-center">L-AXIS</th>
+                                    <th name="l_prsim" class="text-center">L-PRSIM</th>
+                                    <th name="l_bas" class="text-center">L-BAS</th>
+                                    <th name="r_sph" class="text-center">R-SPH</th>
+                                    <th name="r_cyl" class="text-center">R-CYL</th>
+                                    <th name="r_axis" class="text-center">R-AXIS</th>
+                                    <th name="r_prsim" class="text-center">R-PRSIM</th>
+                                    <th name="r_bas" class="text-center">R-BAS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <td  class="text-center">
+                                        <span t-field="o.order_l_sph"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_l_cyl"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_l_axis"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_l_prsim"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_l_bas"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_r_sph"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_r_cyl"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_r_axis"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_r_prsim"/>
+                                    </td>
+                                    <td  class="text-center">
+                                        <span t-field="o.order_r_bas"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <span>PD</span>
+                                    </td>
+                                    <td colspan="9">
+                                        <span t-field="o.order_pd"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-auto col-4">
+                               
+                            </div>
+                            <div class="col-auto col-4"></div>
+                            <div class="col-auto col-4">
+                                <p class="mt-0 mb-1">驗光師:
+                                    <span class="text-left" t-field="o.customer_id.name"/>
+                                </p>
+                                <p>證號:
+                                    <span class="text-left mt-0 mb-1" t-field="o.order_created"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

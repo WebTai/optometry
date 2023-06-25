@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record model="ir.actions.act_window" id="shop_action_window">
+    <field name="name">營業執照維護</field>
+    <field name="res_model">optometry.store</field>
+    <field name="binding_view_types">list,form</field>
+  </record>
+  <!-- Top menu item -->
+  <menuitem name="營業執照" id="menu_optometry_shop_root" parent="menu_optometry_optometry_root" action="shop_action_window"/>
+  <!-- <menuitem name="驗光單2" id="optometry.optometry" parent="optometry.optometrist_root" action="optometrist.action_window"/> -->
+  <!-- explicit list view definition -->
+  <record model="ir.ui.view" id="store_list">
+    <field name="name">store list</field>
+    <field name="model">optometry.store</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="store_id"/>
+        <field name="lience_id"/>
+      </tree>
+    </field>
+  </record>
+  <record id="store_form" model="ir.ui.view">
+    <field name="name">store form</field>
+    <field name="model">optometry.store</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+                 </header>
+        <sheet>
+          <div class="oe_title">
+            <h1>
+              <field name="store_id" readonly="1"/>
+            </h1>
+          </div>
+          <group >
+            <group >
+              <field name="store_id" />
+              <field name="lience_id" />
+            </group>
+            <group >
+              <field name="pic"  widget='image'/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>
